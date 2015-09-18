@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="runumundo" name="paintumundo">
+	<property name="codeBase" value="file:D:\Users\danny\paintumundo" />
+    <target name="compileumundo">
+    <javac srcdir="./buildsrc/" destdir="." classpathref="dependency.path" />
+    </target>
+	<path id="dependency.path">
+	<fileset dir="./umundojar/" includes="*.jar"/>
+		</path>
+    <target name="runumundo" depends="compileumundo">
+        <java classname="SimplePaint" fork="true" newenvironment="true"  classpathref="dependency.path">
+            <classpath path="."/>
+        </java>
+    </target>
+    </project>
